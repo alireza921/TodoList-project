@@ -44,8 +44,8 @@ const TodoApp = () => {
           element={<NewTodo onAddTodo={addTodoHandler} />}
         />
         {/* <Route path='/todolist' element={<TodoList todos={todos} />} /> */}
-        <Route path='/compelete' element={<CompeleteTodo />} />
-        <Route path='/uncompelete' element={<UnCompeleteTodo />} />
+        <Route path='/compelete' element={<CompeleteTodo todos={todos} />} />
+        <Route path='/uncompelete' element={<UnCompeleteTodo todos={todos} />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </section>

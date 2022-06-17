@@ -15,36 +15,14 @@
     align-items: center;
     align-content: center;
     flex-direction: row;
+    margin: 8px 5px;
+}
+.total>h3 { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .icon { 
     color: #5b21b6;
     font-size: 25px;
-}
-.compelete { 
-    background: #d4deff;
-    width: 250px;
-    height: 150px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin:8px 5px;
-    cursor: pointer;
-}
-
-.unCompelete { 
-    background: #f9a8d4;
-    width: 250px;
-    height: 150px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin:8px 5px;
-    cursor: pointer;
-}
-
-.date { 
-    align-self: flex-start;
-    margin: 8px 5px;
 }
