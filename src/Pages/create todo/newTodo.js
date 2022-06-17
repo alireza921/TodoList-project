@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-
+import styles from "./newtodo.module.css";
 const NewTodo = ({ onAddTodo }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,28 +22,28 @@ const NewTodo = ({ onAddTodo }) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div>
+    <form onSubmit={submitHandler} className={styles.newTodoForm}>
+      <div className={styles.inputContainer}>
         <label> Date </label>
-        <input
+        <input className={styles.input}
           name='date'
           value={newTodo.date}
           type='date'
           onChange={changeHandler}
         />
       </div>
-      <div>
+      <div className={styles.inputContainer}>
         <label> Title</label>
-        <input
+        <input className={styles.input}
           type='text'
           name='title'
           value={newTodo.title}
           onChange={changeHandler}
         />
       </div>
-      <div>
+      <div className={styles.inputContainer}>
         <label> describtion </label>
-        <textarea
+        <textarea className={styles.input}
           type='text'
           name='describtion'
           value={newTodo.describtion}
@@ -51,7 +51,7 @@ const NewTodo = ({ onAddTodo }) => {
         />
       </div>
       {/* <Link to='/' state={newTodo}> */}
-      <button type='submit'>create todo</button>
+      <button type='submit' className={styles.btn} >create todo</button>
       {/* </Link> */}
     </form>
   );

@@ -1,5 +1,7 @@
-
 import styles from "./home.module.css";
+import { MdDone } from "react-icons/md";
+import { RiChatHistoryLine } from "react-icons/ri";
+
 const Home = ({ todos, onCompeleteTodo }) => {
   console.log(todos);
   const compeleteTodoHandler = (id) => {
@@ -8,20 +10,35 @@ const Home = ({ todos, onCompeleteTodo }) => {
 
   return (
     <div>
-      home page
-      {todos.map((todo) => (
-        <div
-          key={todo.id}
-          className={
-            todo.iscompelete ? `${styles.compelete}` : `${styles.unCompelete}`
-          }
-          onClick={() => compeleteTodoHandler(todo.id)}>
-          <p> {todo.date} </p>
-          <h2> {todo.title} </h2>
-          <p> {todo.describtion} </p>
-        </div>
-      ))}
-      .
+      <h2> Home page </h2>
+      <div className={styles.total}>
+        <h3> all todo : {todos.length} </h3>
+        <h3>
+          <RiChatHistoryLine className={styles.icon} />
+          <span> Remaining Todos</span>
+           : {todos.filter((p) => !p.iscompelete).length}
+        </h3>
+        <h3>
+          <MdDone className={styles.icon} />
+          <span> complete Todos</span>
+          : {todos.filter((p) => p.iscompelete).length}
+        </h3>
+      </div>
+
+      <div className={styles.homeHolder}>
+        {todos.map((todo) => (
+          <div
+            key={todo.id}
+            className={
+              todo.iscompelete ? `${styles.compelete}` : `${styles.unCompelete}`
+            }
+            onClick={() => compeleteTodoHandler(todo.id)}>
+            <p className={styles.date}> {todo.date} </p>
+            <h2> {todo.title} </h2>
+            <p> {todo.describtion} </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

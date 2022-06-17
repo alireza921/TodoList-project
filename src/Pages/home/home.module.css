@@ -1,11 +1,50 @@
-.todoContainer{
-    background: blue;
+
+.homeHolder { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 8px;
 }
 
+.total { 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+}
+.icon { 
+    color: #5b21b6;
+    font-size: 25px;
+}
 .compelete { 
-    background: green;
+    background: #d4deff;
+    width: 250px;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:8px 5px;
+    cursor: pointer;
 }
 
 .unCompelete { 
-    background: red;
+    background: #f9a8d4;
+    width: 250px;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:8px 5px;
+    cursor: pointer;
+}
+
+.date { 
+    align-self: flex-start;
+    margin: 8px 5px;
 }

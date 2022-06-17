@@ -1,0 +1,29 @@
+.holder { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+}
+
+.main { 
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 95%;
+background: #e0e0e0;
+padding: 8px 5px;
+border-radius: 8px;
+/* border: solid 1px #375cde; */
+box-shadow: 5px 3px 20px 1px #e0e0e0;
+margin: 5px 8px;
+}
+
+.pages {
+    width: 90%;
+    background: #efefef;
+    margin: 5px;
+    border-radius: 8px;
+    padding: 8px 5px;
+    /* box-shadow: 0px 0px 17px 2px #98a0bd; */
+}

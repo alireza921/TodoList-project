@@ -1,0 +1,45 @@
+.newTodoForm { 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+    font-weight: bold;
+}
+
+.inputContainer { 
+    padding: 8px 10px;
+    margin: 8px 10px;
+    display: flex;
+    color: #5b21b6;
+    width: 320px;
+    align-content: center;
+    align-items: center;
+}
+
+.inputContainer>label { 
+    width: 90px;
+}
+
+.input { 
+    padding: 5px 15px;
+    margin: 5px;
+    border: solid 1px #d8b4fe;
+    border-radius: 8px;
+    color: #5b21b6;
+    outline: none;
+    font-weight: bold;
+}
+
+.btn { 
+    width: 100px;
+    border : none; 
+    padding: 8px;
+    margin: 8px 0;
+    background-color: #5b21b6;
+    color: #e1e0e9;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}

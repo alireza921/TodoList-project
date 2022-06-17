@@ -1,12 +1,14 @@
 import Navigation from "../components/navigation/Navigation";
 import Header from "../components/header/header";
-
-const LayOut = ({children}) => {
+import styles from "./layout.module.css";
+const LayOut = ({ children }) => {
   return (
-    <section>
+    <section className={styles.holder}>
       <Header />
-      <Navigation />
-      {children}
+      <main className={styles.main}>
+        <Navigation />
+        <article className={styles.pages}>{children}</article>
+      </main>
     </section>
   );
 };
