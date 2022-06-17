@@ -1,13 +1,11 @@
-import Header from "../header/header";
 import { Routes, Route } from "react-router-dom";
 import NewTodo from "../../Pages/create todo/newTodo";
 import CompeleteTodo from "../../Pages/compelete todo/compelete todo";
 import UnCompeleteTodo from "../../Pages/Uncompelet todo/uncomplete todo";
 import Home from "../../Pages/home/home";
 import NotFound from "../../Pages/NotFound/NotFound";
-import Navigation from "../navigation/Navigation";
 import { useState } from "react";
-import TodoList from "../../Pages/todolist/todolist";
+import TodoDetail from "../../Pages/todoDetail/todoDetail";
 
 const TodoApp = () => {
   const [todos, setTodo] = useState([]);
@@ -23,29 +21,46 @@ const TodoApp = () => {
     console.log(id);
     const index = todos.findIndex((p) => p.id === id);
     const selectedTodo = { ...todos[index] };
-    // console.log(todos);
     console.log(selectedTodo);
     selectedTodo.iscompelete = !selectedTodo.iscompelete;
     const updatedTodos = [...todos];
     updatedTodos[index] = selectedTodo;
     setTodo(updatedTodos);
   };
+  const deleteTodoHandler = (id) => {
+    const selectedItem = todos.filter((todo) => todo.id !== id);
+    setTodo(selectedItem);
+  };
+  // console.log(todos);
 
-  console.log(todos);
   return (
     <section>
       <Routes>
         <Route
           path='/'
-          element={<Home todos={todos} onCompeleteTodo={onCompeleteTodo} />}
+          element={
+            <Home
+              todos={todos}
+              onCompeleteTodo={onCompeleteTodo}
+              onDelete={deleteTodoHandler}
+            />
+          }
         />
+
+        <Route path='/todo/:id' element={<TodoDetail />} />
+
         <Route
           path='/newtodo'
           element={<NewTodo onAddTodo={addTodoHandler} />}
         />
-        {/* <Route path='/todolist' element={<TodoList todos={todos} />} /> */}
+
         <Route path='/compelete' element={<CompeleteTodo todos={todos} />} />
-        <Route path='/uncompelete' element={<UnCompeleteTodo todos={todos} />} />
+
+        <Route
+          path='/uncompelete'
+          element={<UnCompeleteTodo todos={todos} />}
+        />
+
         <Route path='*' element={<NotFound />} />
       </Routes>
     </section>

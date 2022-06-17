@@ -3,7 +3,7 @@ import { MdDone } from "react-icons/md";
 import { RiChatHistoryLine } from "react-icons/ri";
 import Todo from "../../components/todo/todo";
 
-const Home = ({ todos, onCompeleteTodo }) => {
+const Home = ({ todos, onCompeleteTodo , onDelete }) => {
   console.log(todos);
   const compeleteTodoHandler = (id) => {
     onCompeleteTodo(id);
@@ -28,7 +28,7 @@ const Home = ({ todos, onCompeleteTodo }) => {
 
       <div className={styles.homeHolder}>
         {todos.map((todo) => (
-          <Todo todo={todo} onCompelete={compeleteTodoHandler} />
+          <Todo todo={todo} onCompelete={compeleteTodoHandler} onDelete={onDelete} />
         ))}
       </div>
     </div>

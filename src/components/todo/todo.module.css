@@ -1,5 +1,5 @@
 
-.homeHolder { 
+.todoHolder { 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,4 +35,16 @@
 .date { 
     align-self: flex-start;
     margin: 8px 5px;
+}
+
+.btn { 
+    width: 100px;
+    border: none;
+    padding: 8px;
+    margin: 8px 5px;
+    background-color: #5b21b6;
+    color: #e1e0e9;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
 }
