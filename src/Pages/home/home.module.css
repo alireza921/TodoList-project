@@ -1,0 +1,11 @@
+.todoContainer{
+    background: blue;
+}
+
+.compelete { 
+    background: green;
+}
+
+.unCompelete { 
+    background: red;
+}
