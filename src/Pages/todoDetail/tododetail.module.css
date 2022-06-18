@@ -1,0 +1,46 @@
+
+.todoDetailContainer { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.list { 
+    list-style-type: none;
+    color: #5b21b6;
+}
+.list li { 
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 8px 5px;
+}
+
+/* .list>li>h2,p { 
+    color: #100ff;
+    padding: 2px 6px;
+} */
+
+/* .todoDetailContainer */
+
+.btnContainer { 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.btn { 
+    width: 100px;
+    border: none;
+    padding: 8px;
+    margin: 8px 5px;
+    background-color: #5b21b6;
+    color: #e1e0e9;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}

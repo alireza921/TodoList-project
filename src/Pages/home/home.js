@@ -3,16 +3,16 @@ import { MdDone } from "react-icons/md";
 import { RiChatHistoryLine } from "react-icons/ri";
 import Todo from "../../components/todo/todo";
 
-const Home = ({ todos, onCompeleteTodo , onDelete }) => {
+const Home = ({ todos, onCompeleteTodo, onDelete }) => {
   console.log(todos);
   const compeleteTodoHandler = (id) => {
     onCompeleteTodo(id);
   };
 
   return (
-    <div>
+    <section>
       <h2> Home page </h2>
-      <div className={styles.total}>
+      <header className={styles.total}>
         <h3> all todo : {todos.length} </h3>
         <h3>
           <RiChatHistoryLine className={styles.icon} />
@@ -24,14 +24,18 @@ const Home = ({ todos, onCompeleteTodo , onDelete }) => {
           <span> complete Todos</span>:
           {todos.filter((p) => p.iscompelete).length}
         </h3>
-      </div>
+      </header>
 
-      <div className={styles.homeHolder}>
+      <main className={styles.homeHolder}>
         {todos.map((todo) => (
-          <Todo todo={todo} onCompelete={compeleteTodoHandler} onDelete={onDelete} />
+          <Todo
+            todo={todo}
+            onCompelete={compeleteTodoHandler}
+            onDelete={onDelete}
+          />
         ))}
-      </div>
-    </div>
+      </main>
+    </section>
   );
 };
 

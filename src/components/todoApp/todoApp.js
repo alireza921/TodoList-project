@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import NewTodo from "../../Pages/create todo/newTodo";
 import CompeleteTodo from "../../Pages/compelete todo/compelete todo";
 import UnCompeleteTodo from "../../Pages/Uncompelet todo/uncomplete todo";
@@ -9,7 +9,7 @@ import TodoDetail from "../../Pages/todoDetail/todoDetail";
 
 const TodoApp = () => {
   const [todos, setTodo] = useState([]);
-
+  const navigaet = useNavigate();
   function addTodoHandler(newTodo) {
     setTodo([
       ...todos,
@@ -17,38 +17,38 @@ const TodoApp = () => {
     ]);
   }
 
-  const onCompeleteTodo = (id) => {
-    console.log(id);
-    const index = todos.findIndex((p) => p.id === id);
+  const compeleteTodoHandler = (id) => {
+    const index = todos.findIndex((p) => id === p.id);
+
     const selectedTodo = { ...todos[index] };
-    console.log(selectedTodo);
+
     selectedTodo.iscompelete = !selectedTodo.iscompelete;
     const updatedTodos = [...todos];
     updatedTodos[index] = selectedTodo;
     setTodo(updatedTodos);
   };
   const deleteTodoHandler = (id) => {
+    console.log(id);
     const selectedItem = todos.filter((todo) => todo.id !== id);
+    console.log(selectedItem);
     setTodo(selectedItem);
+    navigaet("/");
   };
   // console.log(todos);
 
   return (
     <section>
       <Routes>
+        <Route path='/' element={<Home todos={todos} />} />
         <Route
-          path='/'
+          path='/todo/:id'
           element={
-            <Home
-              todos={todos}
-              onCompeleteTodo={onCompeleteTodo}
+            <TodoDetail
+              onCompeleteTodo={compeleteTodoHandler}
               onDelete={deleteTodoHandler}
             />
           }
         />
-
-        <Route path='/todo/:id' element={<TodoDetail />} />
-
         <Route
           path='/newtodo'
           element={<NewTodo onAddTodo={addTodoHandler} />}

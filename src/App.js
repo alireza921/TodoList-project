@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import TodoApp from "./components/todoApp/todoApp";
 import { BrowserRouter } from "react-router-dom";
