@@ -2,9 +2,11 @@ import styles from "./home.module.css";
 import { MdDone } from "react-icons/md";
 import { RiChatHistoryLine } from "react-icons/ri";
 import Todo from "../../components/todo/todo";
+import { useTodo } from "../../context/contextProvider";
+import { searchTodos } from "../../utils/filterFunction";
 
-const Home = ({ todos, onCompeleteTodo, onDelete }) => {
-  console.log(todos);
+const Home = ({ onCompeleteTodo, onDelete }) => {
+  const todos = useTodo();
   const compeleteTodoHandler = (id) => {
     onCompeleteTodo(id);
   };

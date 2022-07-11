@@ -6,9 +6,12 @@ import Home from "../../Pages/home/home";
 import NotFound from "../../Pages/NotFound/NotFound";
 import { useState } from "react";
 import TodoDetail from "../../Pages/todoDetail/todoDetail";
+import { useTodo, useTodoAction } from "../../context/contextProvider";
 
 const TodoApp = () => {
-  const [todos, setTodo] = useState([]);
+  // const [todos, setTodo] = useState([]);
+  const todos = useTodo() ; 
+  const setTodo = useTodoAction() ;
   const navigaet = useNavigate();
   function addTodoHandler(newTodo) {
     setTodo([

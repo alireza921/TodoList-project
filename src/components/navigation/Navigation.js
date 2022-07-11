@@ -11,9 +11,6 @@ const Navigation = () => {
     { to: "/newtodo", name: <IoIosCreate/> },
     { to: "/compelete", name: <MdDone /> },
     { to: "/uncompelete", name: <RiChatHistoryLine/> },
-    // { to: "/todolist", name: "TodoList" },
-
-    // FcProcess  - AiOutlineCheckCircle   - IoIosCheckmarkCircleOutline - RiChatHistoryLine
   ];
 
   return (

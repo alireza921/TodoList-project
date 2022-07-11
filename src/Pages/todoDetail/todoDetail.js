@@ -1,9 +1,11 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./tododetail.module.css";
 import { BsCalendar3 } from "react-icons/bs";
+
 const TodoDetail = ({ onCompeleteTodo, onDelete }) => {
   const location = useLocation();
   const todo = location.state;
+
   return (
     <section className={styles.todoDetailContainer}>
       <ul className={styles.list}>
@@ -23,9 +25,13 @@ const TodoDetail = ({ onCompeleteTodo, onDelete }) => {
         </li>
       </ul>
       <div className={styles.btnContainer}>
-        <button className={styles.btn} onClick={() => onCompeleteTodo(todo.id)}>
-          {todo.iscompelete ? "Uncomplete" : "Complete"}
-        </button>
+        <Link to={todo.iscompelete ? "/uncompelete" : "/"}>
+          <button
+            className={styles.btn}
+            onClick={() => onCompeleteTodo(todo.id)}>
+            {todo.iscompelete ? "Uncomplete" : "Complete"}
+          </button>
+        </Link>
         <button className={styles.btn} onClick={() => onDelete(todo.id)}>
           delete
         </button>
